@@ -86,7 +86,8 @@ library(relaimpo)
 # First: looks at the variable as if none of the other variables were present in the model
 # Pratt: product of the standard coefficient and the correlation
 calc.relimp(Linearmodel, type = c("lmg", "last", "first", "pratt"), rela=TRUE)
-# Bootstrap 
+# Bootstrap
+# to test whether one predictor is significantly more important than the other
 boot <- boot.relimp(Linearmodel, b = 10, type = c("lmg","last", "first", "pratt"), rank = TRUE, diff = TRUE, rela = TRUE)
 booteval.relimp(boot) # print result
 plot(booteval.relimp(boot,sort=TRUE)) # plot result 
